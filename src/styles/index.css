@@ -14,7 +14,8 @@ body {
   min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
 }
 
 .mono-nav {
@@ -32,6 +33,7 @@ body {
   font-weight: 500;
   position: relative;
   transition: color 0.2s ease;
+  padding: 0.5rem 0;
 }
 
 .mono-nav-link:hover {
@@ -54,17 +56,17 @@ body {
 
 .mono-split-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 3rem;
   align-items: start;
 }
 
 .mono-intro {
-  padding-right: 1rem;
+  padding-right: 0;
 }
 
 .mono-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
   color: #e6edf3;
@@ -77,14 +79,14 @@ body {
 }
 
 .mono-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 1.5rem;
   color: #8b949e;
   font-weight: 400;
 }
 
 .mono-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
   color: #8b949e;
   line-height: 1.8;
@@ -98,6 +100,8 @@ body {
   border: 1px solid #30363d;
   margin-top: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 100%;
 }
 
 .mono-terminal-header {
@@ -135,12 +139,15 @@ body {
 
 .mono-terminal-body {
   padding: 1rem;
+  overflow-x: auto;
 }
 
 .mono-terminal-line {
   margin: 0.5rem 0;
   font-size: 0.9rem;
   color: #c9d1d9;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .mono-terminal-line:first-child {
@@ -151,13 +158,15 @@ body {
 .mono-blog-links {
   background-color: #161b22;
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   border: 1px solid #30363d;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mono-section-title {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
   font-weight: 600;
   color: #e6edf3;
 }
@@ -165,19 +174,21 @@ body {
 .mono-links-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .mono-link-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1rem;
   background-color: #0d1117;
   border-radius: 0.5rem;
   text-decoration: none;
   border: 1px solid #30363d;
   transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mono-link-item:hover {
@@ -187,15 +198,16 @@ body {
 }
 
 .mono-link-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #c9d1d9;
 }
 
 .mono-link-arrow {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #00ff8c;
   transition: transform 0.2s ease;
+  margin-left: 0.5rem;
 }
 
 .mono-link-item:hover .mono-link-arrow {
@@ -217,27 +229,31 @@ body {
 
 /* Blog Page */
 .mono-blog-container {
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .mono-blog-heading {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #30363d;
 }
 
 .mono-blog-post {
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: #161b22;
   border-radius: 0.5rem;
   border: 1px solid #30363d;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mono-blog-post-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #e6edf3;
 }
@@ -245,12 +261,14 @@ body {
 .mono-blog-post-date {
   color: #8b949e;
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .mono-blog-post-excerpt {
   color: #c9d1d9;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .mono-blog-post-link {
@@ -260,47 +278,232 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .mono-blog-post-link:hover {
   text-decoration: underline;
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
+/* Blog Post Styles */
+.mono-back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #8b949e;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.mono-back-link:hover {
+  color: #00ff8c;
+  background-color: rgba(0, 255, 140, 0.05);
+  border-color: #30363d;
+}
+
+.mono-back-arrow {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.mono-article {
+  background-color: #161b22;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid #30363d;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mono-article-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #30363d;
+}
+
+.mono-article-title {
+  font-size: 2rem;
+  color: #e6edf3;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.mono-article-date {
+  color: #8b949e;
+  font-size: 0.95rem;
+}
+
+.mono-article-content {
+  color: #c9d1d9;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.mono-article-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #e6edf3;
+  font-size: 1.4rem;
+}
+
+.mono-article-content p {
+  margin-bottom: 1.5rem;
+}
+
+.mono-article-content pre {
+  background-color: #0d1117;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid #30363d;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.mono-article-content ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.mono-article-content li {
+  margin-bottom: 0.5rem;
+}
+
+.mono-error-box {
+  background-color: #161b22;
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  border: 1px solid #30363d;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mono-error-title {
+  font-size: 1.5rem;
+  color: #e6edf3;
+  margin-bottom: 1rem;
+}
+
+.mono-error-message {
+  color: #8b949e;
+  margin-bottom: 1.5rem;
+}
+
+.mono-button {
+  background-color: #238636;
+  color: #e6edf3;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mono-button:hover {
+  background-color: #2ea043;
+}
+
+/* Medium Screens */
+@media (min-width: 768px) {
+  .mono-container {
+    padding: 2rem;
+  }
+  
   .mono-split-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
   }
   
   .mono-intro {
-    padding-right: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .mono-container {
-    padding: 1.5rem;
+    padding-right: 1rem;
   }
   
   .mono-title {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
   
   .mono-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+  }
+  
+  .mono-description {
+    font-size: 1.1rem;
   }
   
   .mono-blog-links {
-    padding: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .mono-section-title {
+    font-size: 1.6rem;
   }
   
   .mono-link-item {
-    padding: 0.8rem 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .mono-link-title {
+    font-size: 1rem;
+  }
+  
+  .mono-blog-post {
+    padding: 2rem;
+  }
+  
+  .mono-blog-post-title {
+    font-size: 1.8rem;
+  }
+  
+  .mono-article {
+    padding: 2.5rem;
+  }
+  
+  .mono-article-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 350px) {
+  .mono-container {
+    padding: 1rem 0.5rem;
   }
   
   .mono-nav {
-    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .mono-title {
+    font-size: 2rem;
+  }
+  
+  .mono-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .mono-terminal-body {
+    padding: 0.75rem;
+  }
+  
+  .mono-blog-links {
+    padding: 1rem;
+  }
+  
+  .mono-blog-post {
+    padding: 1rem;
+  }
+  
+  .mono-article {
+    padding: 1rem;
   }
 }
 
