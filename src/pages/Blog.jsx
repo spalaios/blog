@@ -26,9 +26,9 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: 'Introduction to TypeScript',
+    title: 'Building Neural Networks',
     date: 'May 20, 2023',
-    excerpt: 'Why TypeScript is becoming the preferred language for many developers and how it can improve your development workflow.',
+    excerpt: 'Dive into the world of neural networks and learn how to build systems that can learn and adapt to complex data patterns.',
     content: 'Full content would go here...'
   }
 ];
@@ -39,22 +39,35 @@ const Blog = () => {
       <nav className="mono-nav">
         <Link to="/" className="mono-nav-link">Home</Link>
         <Link to="/blog" className="mono-nav-link active">Blog</Link>
+        <Link to="/" className="mono-nav-link">About</Link>
+        <Link to="/" className="mono-nav-link">Now</Link>
       </nav>
       
       <div className="mono-blog-container">
         <div className="mono-blog-heading">
-          <h1 className="mono-title">$ cat blog-posts.md</h1>
-          <p className="mono-description">A collection of thoughts, tutorials, and insights on web development.</p>
+          <h1 className="mono-title">Blog</h1>
+          <p className="mono-description">All posts in chronological order.</p>
         </div>
         
-        {blogPosts.map(post => (
+        <h2 className="mono-section-title">2024</h2>
+        {blogPosts.slice(0, 2).map((post, index) => (
           <div key={post.id} className="mono-blog-post">
-            <h2 className="mono-blog-post-title">{post.title}</h2>
-            <p className="mono-blog-post-date">{post.date}</p>
-            <p className="mono-blog-post-excerpt">{post.excerpt}</p>
-            <Link to={`/blog/${post.id}`} className="mono-blog-post-link">
-              Read Full Post <span className="mono-link-arrow">→</span>
-            </Link>
+            <h3 className="mono-blog-post-title">
+              <Link to={`/blog/${post.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                {index + 1}. {post.title}
+              </Link>
+            </h3>
+          </div>
+        ))}
+        
+        <h2 className="mono-section-title" style={{ marginTop: '2rem' }}>2023</h2>
+        {blogPosts.slice(2, 4).map((post, index) => (
+          <div key={post.id} className="mono-blog-post">
+            <h3 className="mono-blog-post-title">
+              <Link to={`/blog/${post.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                {index + 1}. {post.title}
+              </Link>
+            </h3>
           </div>
         ))}
       </div>

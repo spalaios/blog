@@ -84,10 +84,45 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: 'Introduction to TypeScript',
+    title: 'Building Neural Networks',
     date: 'May 20, 2023',
-    excerpt: 'Why TypeScript is becoming the preferred language for many developers.',
-    content: 'Full content would go here...'
+    excerpt: 'Dive into the world of neural networks and learn how to build systems that can learn and adapt to complex data patterns.',
+    content: `
+      <p>Neural networks are computing systems inspired by the biological neural networks that constitute animal brains. They are the foundation of many modern AI systems.</p>
+      <h3>The Basic Structure</h3>
+      <p>A neural network consists of layers of interconnected nodes or "neurons". Each connection can transmit a signal from one neuron to another. Here's a basic implementation:</p>
+      <pre>class NeuralNetwork {
+  constructor(inputNodes, hiddenNodes, outputNodes) {
+    this.inputNodes = inputNodes;
+    this.hiddenNodes = hiddenNodes;
+    this.outputNodes = outputNodes;
+    
+    // Initialize weights and biases
+    this.weights_ih = new Matrix(this.hiddenNodes, this.inputNodes);
+    this.weights_ho = new Matrix(this.outputNodes, this.hiddenNodes);
+    this.weights_ih.randomize();
+    this.weights_ho.randomize();
+    
+    this.bias_h = new Matrix(this.hiddenNodes, 1);
+    this.bias_o = new Matrix(this.outputNodes, 1);
+    this.bias_h.randomize();
+    this.bias_o.randomize();
+  }
+  
+  // More methods would be defined here
+}</pre>
+      <h3>Training the Network</h3>
+      <p>Neural networks learn by adjusting connection weights based on the error of their outputs compared to the expected results. This process is called backpropagation.</p>
+      <h3>Applications</h3>
+      <p>Neural networks are used in a variety of applications:</p>
+      <ul>
+        <li>Image and speech recognition</li>
+        <li>Natural language processing</li>
+        <li>Game playing and decision making</li>
+        <li>Medical diagnosis</li>
+      </ul>
+      <p>The field of neural networks is constantly evolving, with new architectures and training methods being developed regularly.</p>
+    `
   }
 ];
 
@@ -105,17 +140,19 @@ const BlogPost = () => {
         <nav className="mono-nav">
           <Link to="/" className="mono-nav-link">Home</Link>
           <Link to="/blog" className="mono-nav-link active">Blog</Link>
+          <Link to="/" className="mono-nav-link">About</Link>
+          <Link to="/" className="mono-nav-link">Now</Link>
         </nav>
         
         <div className="mono-blog-container">
           <div className="mono-error-box">
-            <h2 className="mono-error-title">Error 404: Post not found</h2>
-            <p className="mono-error-message">The blog post you're looking for doesn't exist.</p>
+            <h2 className="mono-error-title">404: Post not found</h2>
+            <p className="mono-error-message">The article you're looking for doesn't exist.</p>
             <button 
               onClick={() => navigate('/blog')} 
               className="mono-button"
             >
-              cd ../blog
+              Back to blog
             </button>
           </div>
         </div>
@@ -128,6 +165,8 @@ const BlogPost = () => {
       <nav className="mono-nav">
         <Link to="/" className="mono-nav-link">Home</Link>
         <Link to="/blog" className="mono-nav-link active">Blog</Link>
+        <Link to="/" className="mono-nav-link">About</Link>
+        <Link to="/" className="mono-nav-link">Now</Link>
       </nav>
       
       <div className="mono-blog-container">
@@ -135,7 +174,7 @@ const BlogPost = () => {
           to="/blog" 
           className="mono-back-link"
         >
-          <span className="mono-back-arrow">←</span> cd ..
+          <span className="mono-back-arrow">←</span> Back
         </Link>
         
         <article className="mono-article">
