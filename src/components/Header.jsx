@@ -28,7 +28,7 @@ const Header = () => {
         <nav className="nav">
           <div className="logo">
             <Link to="/" className="logo-link" aria-label="Go to home page" tabIndex="0">
-              <span className="logo-text">Suraj Palai<span className="accent-dot">.</span></span>
+              <span className="logo-text">Suraj Palai<span className="accent-dot"></span></span>
             </Link>
           </div>
           <div className="nav-links">
