@@ -1,46 +1,63 @@
-/* Base Styles */
+/* Base Styles - Skyfall Theme */
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: #06121e;
+  color: #d0d6e0;
+  background-image: linear-gradient(to bottom, #06121e 0%, #0a1622 100%);
+  background-attachment: fixed;
 }
 
-/* New Theme */
+/* Skyfall Theme */
 .mono-container {
   min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+  position: relative;
+}
+
+.mono-container::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(10, 88, 145, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .mono-nav {
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
   margin-bottom: 4rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid rgba(70, 130, 180, 0.2);
   padding-bottom: 1rem;
 }
 
 .mono-nav-link {
-  color: #a0a0a0;
+  color: #8ba3bc;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   position: relative;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
   padding: 0.5rem 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .mono-nav-link:hover {
-  color: #ffffff;
+  color: #07abf5;
 }
 
 .mono-nav-link.active {
-  color: #4ecca3;
+  color: #07abf5;
 }
 
 .mono-nav-link.active::after {
@@ -49,8 +66,9 @@ body {
   bottom: -1rem;
   left: 0;
   width: 100%;
-  height: 3px;
-  background-color: #4ecca3;
+  height: 2px;
+  background-color: #07abf5;
+  box-shadow: 0 0 8px rgba(7, 171, 245, 0.6);
 }
 
 .mono-split-layout {
@@ -65,72 +83,75 @@ body {
 }
 
 .mono-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
   color: #ffffff;
   line-height: 1.1;
+  letter-spacing: -1px;
+  text-shadow: 0 0 10px rgba(7, 171, 245, 0.3);
 }
 
 .mono-accent {
-  color: #4ecca3;
+  color: #07abf5;
   position: relative;
 }
 
 .mono-subtitle {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #a0a0a0;
-  font-weight: 500;
+  color: #8ba3bc;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
 .mono-description {
   font-size: 1.2rem;
   margin-bottom: 2.5rem;
-  color: #ccc;
+  color: #a8b8cc;
   line-height: 1.7;
 }
 
-/* Terminal Style */
+/* Terminal Style - Skyfall */
 .mono-terminal {
-  background-color: #1e1e1e;
-  border-radius: 0.75rem;
+  background-color: #0b1925;
+  border-radius: 0.5rem;
   overflow: hidden;
-  border: 1px solid #333;
+  border: 1px solid rgba(70, 130, 180, 0.3);
   margin-top: 2.5rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(7, 171, 245, 0.1);
 }
 
 .mono-terminal-header {
-  background-color: #252525;
+  background-color: #0f2335;
   padding: 0.8rem 1.25rem;
   display: flex;
   align-items: center;
 }
 
 .mono-terminal-dot {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   margin-right: 8px;
   display: inline-block;
 }
 
 .mono-terminal-dot:nth-child(1) {
-  background-color: #ff605c;
+  background-color: #ff5f57;
 }
 
 .mono-terminal-dot:nth-child(2) {
-  background-color: #ffbd44;
+  background-color: #febc2e;
 }
 
 .mono-terminal-dot:nth-child(3) {
-  background-color: #00ca4e;
+  background-color: #28c840;
 }
 
 .mono-terminal-title {
-  color: #999;
-  font-size: 0.95rem;
+  color: #8ba3bc;
+  font-size: 0.9rem;
   margin-left: 0.75rem;
 }
 
@@ -141,21 +162,22 @@ body {
 .mono-terminal-line {
   margin: 0.7rem 0;
   font-size: 1.1rem;
-  color: #e0e0e0;
+  color: #d0d6e0;
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
   line-height: 1.6;
 }
 
 .mono-terminal-line:first-child {
-  color: #4ecca3;
+  color: #07abf5;
 }
 
-/* Blog Links */
+/* Blog Links - Skyfall */
 .mono-blog-links {
-  background-color: #1e1e1e;
-  border-radius: 0.75rem;
+  background-color: #0b1925;
+  border-radius: 0.5rem;
   padding: 2rem;
-  border: 1px solid #333;
+  border: 1px solid rgba(70, 130, 180, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .mono-section-title {
@@ -164,7 +186,8 @@ body {
   font-weight: 600;
   color: #ffffff;
   padding-left: 1rem;
-  border-left: 3px solid #4ecca3;
+  border-left: 3px solid #07abf5;
+  text-shadow: 0 0 10px rgba(7, 171, 245, 0.3);
 }
 
 .mono-links-grid {
@@ -178,50 +201,53 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 1.5rem;
-  background-color: #252525;
-  border-radius: 0.75rem;
+  background-color: rgba(15, 35, 53, 0.6);
+  border-radius: 0.4rem;
   text-decoration: none;
-  border: 1px solid #333;
+  border: 1px solid rgba(70, 130, 180, 0.2);
   transition: all 0.3s ease;
 }
 
 .mono-link-item:hover {
   transform: translateX(10px);
-  background-color: #2a2a2a;
-  border-color: #4ecca3;
+  background-color: rgba(15, 35, 53, 0.9);
+  border-color: #07abf5;
+  box-shadow: 0 0 15px rgba(7, 171, 245, 0.2);
 }
 
 .mono-link-title {
   font-size: 1.1rem;
   font-weight: 500;
-  color: #e0e0e0;
+  color: #d0d6e0;
 }
 
 .mono-link-arrow {
   font-size: 1.3rem;
-  color: #4ecca3;
+  color: #07abf5;
   transition: transform 0.3s ease;
   margin-left: 0.5rem;
+  opacity: 0.8;
 }
 
 .mono-link-item:hover .mono-link-arrow {
   transform: translateX(5px);
+  opacity: 1;
 }
 
 .mono-view-all {
   margin-top: 1.25rem;
-  border: 1px dashed #444;
+  border: 1px dashed rgba(70, 130, 180, 0.4);
   background-color: transparent;
   justify-content: center;
   gap: 0.75rem;
 }
 
 .mono-view-all:hover {
-  border-color: #4ecca3;
-  background-color: rgba(78, 204, 163, 0.05);
+  border-color: #07abf5;
+  background-color: rgba(7, 171, 245, 0.05);
 }
 
-/* Blog Page */
+/* Blog Page - Skyfall */
 .mono-blog-container {
   width: 100%;
   max-width: 850px;
@@ -232,37 +258,40 @@ body {
 .mono-blog-heading {
   margin-bottom: 3rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid rgba(70, 130, 180, 0.3);
 }
 
 .mono-blog-post {
   padding: 2rem;
-  background-color: #1e1e1e;
-  border-radius: 0.75rem;
-  border: 1px solid #333;
+  background-color: #0b1925;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(70, 130, 180, 0.3);
   margin-bottom: 2rem;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .mono-blog-post:hover {
   transform: translateY(-5px);
-  border-color: #4ecca3;
+  border-color: #07abf5;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(7, 171, 245, 0.1);
 }
 
 .mono-blog-post-title {
   font-size: 1.75rem;
   margin-bottom: 0.75rem;
   color: #ffffff;
+  text-shadow: 0 0 10px rgba(7, 171, 245, 0.2);
 }
 
 .mono-blog-post-date {
-  color: #999;
+  color: #8ba3bc;
   font-size: 1rem;
   margin-bottom: 1.25rem;
 }
 
 .mono-blog-post-excerpt {
-  color: #ccc;
+  color: #a8b8cc;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.7;
@@ -271,37 +300,39 @@ body {
 .mono-blog-post-link {
   display: inline-flex;
   align-items: center;
-  color: #4ecca3;
+  color: #07abf5;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   font-size: 1.05rem;
   padding: 0.5rem 0;
 }
 
 .mono-blog-post-link:hover {
-  color: #6fdfb8;
+  color: #4cc7ff;
+  text-shadow: 0 0 8px rgba(7, 171, 245, 0.4);
 }
 
-/* Blog Post Styles */
+/* Blog Post Styles - Skyfall */
 .mono-back-link {
   display: inline-flex;
   align-items: center;
-  color: #999;
+  color: #8ba3bc;
   text-decoration: none;
   margin-bottom: 2rem;
   padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   font-size: 1.05rem;
   transition: all 0.3s ease;
-  background-color: #1e1e1e;
-  border: 1px solid #333;
+  background-color: rgba(15, 35, 53, 0.6);
+  border: 1px solid rgba(70, 130, 180, 0.2);
 }
 
 .mono-back-link:hover {
-  color: #4ecca3;
-  background-color: #252525;
-  border-color: #4ecca3;
+  color: #07abf5;
+  background-color: rgba(15, 35, 53, 0.9);
+  border-color: #07abf5;
+  box-shadow: 0 0 15px rgba(7, 171, 245, 0.2);
 }
 
 .mono-back-arrow {
@@ -310,16 +341,17 @@ body {
 }
 
 .mono-article {
-  background-color: #1e1e1e;
-  border-radius: 0.75rem;
+  background-color: #0b1925;
+  border-radius: 0.5rem;
   padding: 2.5rem;
-  border: 1px solid #333;
+  border: 1px solid rgba(70, 130, 180, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .mono-article-header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid rgba(70, 130, 180, 0.3);
 }
 
 .mono-article-title {
@@ -327,15 +359,16 @@ body {
   color: #ffffff;
   margin-bottom: 0.75rem;
   line-height: 1.2;
+  text-shadow: 0 0 10px rgba(7, 171, 245, 0.3);
 }
 
 .mono-article-date {
-  color: #999;
+  color: #8ba3bc;
   font-size: 1.05rem;
 }
 
 .mono-article-content {
-  color: #e0e0e0;
+  color: #d0d6e0;
   line-height: 1.8;
   font-size: 1.15rem;
 }
@@ -345,6 +378,7 @@ body {
   margin-bottom: 1.25rem;
   color: #ffffff;
   font-size: 1.75rem;
+  text-shadow: 0 0 10px rgba(7, 171, 245, 0.2);
 }
 
 .mono-article-content p {
@@ -352,14 +386,15 @@ body {
 }
 
 .mono-article-content pre {
-  background-color: #252525;
+  background-color: #0f2335;
   padding: 1.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid #333;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(70, 130, 180, 0.3);
   overflow-x: auto;
   margin: 1.75rem 0;
   font-size: 1rem;
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .mono-article-content ul {
@@ -372,41 +407,46 @@ body {
 }
 
 .mono-error-box {
-  background-color: #1e1e1e;
-  border-radius: 0.75rem;
+  background-color: #0b1925;
+  border-radius: 0.5rem;
   padding: 3rem 2rem;
-  border: 1px solid #333;
+  border: 1px solid rgba(70, 130, 180, 0.3);
   text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .mono-error-title {
   font-size: 2rem;
   color: #ffffff;
   margin-bottom: 1.25rem;
+  text-shadow: 0 0 10px rgba(7, 171, 245, 0.3);
 }
 
 .mono-error-message {
-  color: #999;
+  color: #8ba3bc;
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
 
 .mono-button {
-  background-color: #4ecca3;
-  color: #121212;
+  background-color: #07abf5;
+  color: #06121e;
   border: none;
   padding: 0.8rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   font-size: 1.05rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(7, 171, 245, 0.3);
+  letter-spacing: 0.5px;
 }
 
 .mono-button:hover {
-  background-color: #6fdfb8;
+  background-color: #4cc7ff;
   transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(7, 171, 245, 0.5);
 }
 
 /* Medium Screens */
@@ -425,7 +465,7 @@ body {
   }
   
   .mono-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   
   .mono-subtitle {
