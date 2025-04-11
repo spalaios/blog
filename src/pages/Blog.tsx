@@ -33,28 +33,18 @@ const blogPosts = [
   }
 ];
 
-const Blog = () => {
+const Blog: React.FC = () => {
   return (
-    <div className="mono-container">
-      <div className="mono-blog-container">
-        <div className="mono-blog-heading">
-          <h1 className="mono-title">$ cat blog-posts.md</h1>
-          <p className="mono-description">A collection of thoughts, tutorials, and insights on web development.</p>
-        </div>
+    <div className="container">
+      <div className="blog-list">
+        <h1 style={{ marginBottom: '40px' }}>My Blog</h1>
         
         {blogPosts.map(post => (
-          <div key={post.id} className="mono-blog-post">
-            <h2 className="mono-blog-post-title">{post.title}</h2>
-            <p className="mono-blog-post-date">{post.date}</p>
-            <p className="mono-blog-post-excerpt">{post.excerpt}</p>
-            <Link 
-              to={`/blog/${post.id}`} 
-              className="mono-blog-post-link"
-              aria-label={`Read full post: ${post.title}`}
-              tabIndex="0"
-            >
-              Read Full Post <span className="mono-link-arrow">→</span>
-            </Link>
+          <div key={post.id} className="blog-card">
+            <h2 className="blog-title">{post.title}</h2>
+            <p className="blog-date">{post.date}</p>
+            <p className="blog-excerpt">{post.excerpt}</p>
+            <Link to={`/blog/${post.id}`} className="read-more">Read More →</Link>
           </div>
         ))}
       </div>

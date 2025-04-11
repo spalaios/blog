@@ -102,11 +102,6 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="mono-container">
-        <nav className="mono-nav">
-          <Link to="/" className="mono-nav-link">Home</Link>
-          <Link to="/blog" className="mono-nav-link active">Blog</Link>
-        </nav>
-        
         <div className="mono-blog-container">
           <div className="mono-error-box">
             <h2 className="mono-error-title">Error 404: Post not found</h2>
@@ -114,6 +109,8 @@ const BlogPost = () => {
             <button 
               onClick={() => navigate('/blog')} 
               className="mono-button"
+              aria-label="Return to blog list"
+              tabIndex="0"
             >
               cd ../blog
             </button>
@@ -125,15 +122,12 @@ const BlogPost = () => {
   
   return (
     <div className="mono-container">
-      <nav className="mono-nav">
-        <Link to="/" className="mono-nav-link">Home</Link>
-        <Link to="/blog" className="mono-nav-link active">Blog</Link>
-      </nav>
-      
       <div className="mono-blog-container">
         <Link 
           to="/blog" 
           className="mono-back-link"
+          aria-label="Return to blog list"
+          tabIndex="0"
         >
           <span className="mono-back-arrow">←</span> cd ..
         </Link>

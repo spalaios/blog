@@ -5,16 +5,16 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+  
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    
     window.addEventListener('scroll', handleScroll);
     
     return () => {
@@ -27,14 +27,13 @@ const Header = () => {
       <div className="container">
         <nav className="nav">
           <div className="logo">
-            <Link to="/" className="logo-link">
-              <span className="logo-text">Suraj<span className="accent-dot">.</span></span>
+            <Link to="/" className="logo-link" aria-label="Go to home page" tabIndex="0">
+              <span className="logo-text">Suraj Palai<span className="accent-dot">.</span></span>
             </Link>
           </div>
           <div className="nav-links">
-            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
-            <Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''}>Blog</Link>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <Link to="/" className={location.pathname === '/' ? 'active' : ''} aria-label="Home page" tabIndex="0">Home</Link>
+            <Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''} aria-label="Blog page" tabIndex="0">Blog</Link>
           </div>
         </nav>
       </div>
