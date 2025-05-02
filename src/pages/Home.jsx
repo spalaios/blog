@@ -29,6 +29,10 @@ const Home = () => {
               <span className="mono-link-title">JavaScript Best Practices</span>
               <span className="mono-link-arrow">→</span>
             </Link>
+            <Link to="/blog/4" className="mono-link-item" aria-label="Read blog post: Understanding HyperLogLog" tabIndex="0">
+              <span className="mono-link-title">Probabilistic Counting with HyperLogLog: Under the Hood</span>
+              <span className="mono-link-arrow">→</span>
+            </Link>
             <Link to="/blog" className="mono-link-item mono-view-all" aria-label="View all blog posts" tabIndex="0">
               <span className="mono-link-title">View all posts</span>
               <span className="mono-link-arrow">→</span>

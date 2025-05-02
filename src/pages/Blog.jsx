@@ -11,24 +11,10 @@ const blogPosts = [
     content: 'Full content would go here...'
   },
   {
-    id: 2,
-    title: 'CSS Tips and Tricks',
-    date: 'June 30, 2023',
-    excerpt: 'Discover some useful CSS techniques to enhance your web design including flexbox, grid layouts, and responsive design principles.',
-    content: 'Full content would go here...'
-  },
-  {
-    id: 3,
-    title: 'JavaScript Best Practices',
-    date: 'June 15, 2023',
-    excerpt: 'Explore the best practices for writing clean, efficient, and maintainable JavaScript code that will impress your colleagues.',
-    content: 'Full content would go here...'
-  },
-  {
     id: 4,
-    title: 'Introduction to TypeScript',
-    date: 'May 20, 2023',
-    excerpt: 'Why TypeScript is becoming the preferred language for many developers and how it can improve your development workflow.',
+    title: 'Understanding HyperLogLog',
+    date: 'May 1, 2025',
+    excerpt: 'How do you count billions of users or pageviews without storing every single one? Meet HyperLogLog—a clever algorithm that trades exactness for extreme efficiency. Here\'s how it works, and why it’s used by Redis, Google, and more..',
     content: 'Full content would go here...'
   }
 ];

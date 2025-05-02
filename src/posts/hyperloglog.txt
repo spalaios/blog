@@ -1,0 +1,84 @@
+Probabilistic Counting with HyperLogLog: Under the Hood
+
+Part 1
+Let's start with problem statements : 
+- You are a software engineer who has been tasked to build a feature/api where you show the count of either of these requests
+    - total unique users who have visited your website.
+    - total unique search queries done on your platform
+    - total unique IP addresses visiting a server
+
+A generalised version of the above problems statements will be :
+Give the cardinality of all the items
+
+Example :
+
+[
+  { "id": 1, "name": "Alice" },
+  { "id": 2, "name": "Bob" },
+  { "id": 1, "name": "Alice" }
+]
+if we measure the cardinality by "id", then cardinality = 2
+
+//show the image of 5 cubes 
+cubes cardinality = 5
+
+Now that we understand the requirement, the obvious solution that comes to mind is a HashMap.
+Let's go through the HashMap solution :
+Since we have 5 cubes, We will pick one cube and check for the same in the hashmap.
+if it exists in the map then ignore else store the cube in the hashmap.
+The size of the map will be the answer.
+Let's increase the size of the cubes to say 1 billion. 
+
+//show the image of billion cubes
+if we were to follow the hashmap building process here's how your hashmap would have looked like 
+{
+  "cube_bright_green": 1,
+  "cube_red": 1,
+  "cube_blue": 1,
+  "cube_gold": 1,
+  "cube_blue_violet": 1,
+  ...
+  // and so on, up to billion of unique entries
+}
+
+You see the problem above a billion unique entries would have been created.
+
+Let's calculate the approximate total space that will be consumed if the hashmap has 1 billion entries 
+This could easily consume a lot memory potentially crashing the system.
+
+Key : "cube_bright_green" (string)
+    . Avg string length ~20 characters
+    . UTF-16 encoding : 2 bytes/character -> 20 * 2 = 40 bytes
+    . Object overhead + hash + pointers : ~24 bytes
+    . Total key size ~ 64 bytest
+
+Value : int
+    . Just an integer -> 4 bytes
+    . Padding + reference overhead → ~12–16 bytes in object form 
+
+HashMap overhead per entry
+    . Entry object overhead (hash, key ref, value ref, next pointer): ~32 bytes
+
+Key:        ~64 bytes
+Value:      ~16 bytes
+Entry node: ~32 bytes
+-------------------------
+Total:      ~112 bytes per entry
+
+Final Calculation for 1 billion+ will be
+1,000,000,000 × 112 bytes = 112,000,000,000 bytes = 112 GB
+
+Assuming the hashmap with load factor of 0.75 means the hashmap will resize when it's 75% full, so to support 1 billion entries, the capacity needs to be larger than 1 billion (1/0.75 = 1.33), so that will shoot up the memory space to ~150GB.
+
+NOTE : The estimates above is done for HashMap used in Java and can vary based on the JVM runtime, architecture and specific object implemetation.
+
+What problems would we face if we went ahead with this solution:
+. You would need a high memory machine (>= 256 GB RAM). Making it an expensive choice
+. Lookup performace would degrade
+    - While the avg lookup is O(1), collisions can make worst-case O(n) in a poorly implemented hashmap or O(log n) in tree based used in some languages (Java 8+)
+    - Even avg case can slow down due to cache misses with a massive memory footprint.
+. Garbage collection and rehashing could cause major performace hits
+    - The 1 billion keys of the hashmap are live and has to maintained in the heap memory directly putting a lot of pressure on the garbage collector. With this scale, stop the world GC pauses can last seconds to minutes
+    - Rehashing a map with million or billions of entries is a very expensive operation that can pause your application
+
+But if a simple HashMap consumes hundreds of gigabytes, how can anything track billions of unique items in just kilobytes? The answer lies in a clever probabilistic approach. In Part 2, we'll lift the hood on HyperLogLog and see exactly how it achieves this seemingly impossible feat.

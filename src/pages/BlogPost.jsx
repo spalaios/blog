@@ -35,59 +35,30 @@ const blogPosts = [
     `
   },
   {
-    id: 2,
-    title: 'CSS Tips and Tricks',
-    date: 'June 30, 2023',
-    excerpt: 'Discover some useful CSS techniques to enhance your web design.',
-    content: `
-      <p>CSS (Cascading Style Sheets) is a cornerstone technology of the web, allowing you to create great-looking websites. Here are some useful techniques to enhance your designs:</p>
-      <h3>Flexbox</h3>
-      <p>Flexbox is a layout model that allows items in a container to be aligned and distributed across an axis. It's perfect for creating responsive designs:</p>
-      <pre>.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}</pre>
-      <h3>CSS Grid</h3>
-      <p>CSS Grid Layout is a two-dimensional layout system designed specifically for user interface design. It allows you to create complex layouts with ease:</p>
-      <pre>.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}</pre>
-      <h3>Custom Properties (Variables)</h3>
-      <p>CSS variables allow you to define reusable values throughout your stylesheet:</p>
-      <pre>:root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-}
-
-.button {
-  background-color: var(--primary-color);
-}</pre>
-      <h3>Media Queries</h3>
-      <p>Media queries allow you to apply different styles based on device characteristics:</p>
-      <pre>@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-}</pre>
-      <p>These are just a few of the many CSS techniques that can help you create beautiful, responsive web designs.</p>
-    `
-  },
-  {
-    id: 3,
-    title: 'JavaScript Best Practices',
-    date: 'June 15, 2023',
-    excerpt: 'Explore the best practices for writing clean, efficient JavaScript code.',
-    content: 'Full content would go here...'
-  },
-  {
     id: 4,
-    title: 'Introduction to TypeScript',
-    date: 'May 20, 2023',
-    excerpt: 'Why TypeScript is becoming the preferred language for many developers.',
-    content: 'Full content would go here...'
+    title: 'Probabilistic Counting with HyperLogLog: Under the Hood',
+    date: 'May 1, 2025',
+    excerpt: 'How do you count billions of users or pageviews without storing every single one? Meet HyperLogLog—a clever algorithm that trades exactness for extreme efficiency. Here\'s how it works, and why it’s used by Redis, Google, and more..',
+    content: `
+          <h3> Part 1 </h3>
+          <p> Let's start with problem statements : </p>
+          <ul>You are a software engineer who has been tasked to build a feature/api where you show the count of either of these requests</ul>
+          <li>1. total unique users who have visited your website</li>
+          <li>2. total unique search queries done on your platform</li>
+          <li>3. total unique IP addresses visiting a server</li>
+          <li> A generalised version of the above problems statements will be : Give the cardinality of all the items </li>
+
+          <h3>Example : </h3>
+          <pre>
+          [
+            { "id": 1, "name": "Alice" },
+            { "id": 2, "name": "Bob" },
+            { "id": 1, "name": "Alice" }
+          ]
+          if we measure the cardinality by "id", then cardinality = 2
+          </pre>
+    
+    `
   }
 ];
 
