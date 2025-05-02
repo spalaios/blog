@@ -380,12 +380,42 @@ body {
 }
 
 .mono-article-content ul {
-  padding-left: 1.5rem;
+  padding-left: 0;
   margin-bottom: 1.5rem;
+  list-style: none;
 }
 
 .mono-article-content li {
+  margin-bottom: 0.3rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.mono-article-content li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #555555;
+}
+
+.mono-article-content ul ul {
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.mono-article-content ul ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 0;
+  background-color: #777777;
 }
 
 .mono-error-box {
@@ -421,6 +451,40 @@ body {
 .mono-button:hover {
   background-color: #eeeeee;
   border-color: #d0d0d0;
+}
+
+/* JSON Code Block */
+.mono-code-json {
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333333;
+  white-space: pre;
+}
+
+.mono-code-json .string { color: #077a07; }
+.mono-code-json .number { color: #0c6ac6; }
+.mono-code-json .boolean { color: #9a11a9; }
+.mono-code-json .null { color: #767676; }
+.mono-code-json .key { color: #a32828; }
+
+/* Article Image */
+.mono-article-image {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.mono-article-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 @media (min-width: 768px) {

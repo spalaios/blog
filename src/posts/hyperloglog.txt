@@ -22,15 +22,18 @@ if we measure the cardinality by "id", then cardinality = 2
 //show the image of 5 cubes 
 cubes cardinality = 5
 
-Now that we understand the requirement, the obvious solution that comes to mind is a HashMap.
-Let's go through the HashMap solution :
-Since we have 5 cubes, We will pick one cube and check for the same in the hashmap.
-if it exists in the map then ignore else store the cube in the hashmap.
-The size of the map will be the answer.
+Now that we understand the requirement, the obvious solution that comes to mind is using a HashMap to track the unique items. Let's walk through the process with our 5 cubes:
+
+* We start with an empty HashMap.
+* We iterate through each cube.
+* For each cube, we check if it's already a key in our HashMap.
+* If the cube is already in the map, we've seen it before, so we do nothing.
+* If the cube is *not* in the map, we add it as a new key.
+* Once we've processed all cubes, the number of entries in the HashMap gives us the total count of unique cubes.
 Let's increase the size of the cubes to say 1 billion. 
 
 //show the image of billion cubes
-if we were to follow the hashmap building process here's how your hashmap would have looked like 
+if we were to follow the hashmap building process here's how our hashmap would have looked 
 {
   "cube_bright_green": 1,
   "cube_red": 1,
