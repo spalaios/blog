@@ -4,39 +4,39 @@ import createJSONBlock from '../utils/formatJSON';
 
 // Using the same mock data from Blog.jsx
 const blogPosts = [
+//   {
+//     id: 1,
+//     title: 'Getting Started with React',
+//     date: 'July 15, 2023',
+//     excerpt: 'Learn how to build your first React application from scratch.',
+//     content: `
+//       <p>React is a popular JavaScript library for building user interfaces, particularly single-page applications. It's used for handling the view layer in web and mobile apps.</p>
+//       <h3>Setting Up Your Environment</h3>
+//       <p>To get started with React, you'll need to have Node.js installed. Then, you can create a new React application using Create React App:</p>
+//       <pre>npx create-react-app my-app</pre>
+//       <p>Once the installation is complete, navigate to your project directory and start the development server:</p>
+//       <pre>cd my-app</pre>
+//       <pre>npm start</pre>
+//       <h3>Understanding React Components</h3>
+//       <p>React applications are built using components. A component is a self-contained module that renders some output. Components can be functional or class-based.</p>
+//       <p>Here's a simple functional component:</p>
+//       <pre>function Welcome(props) {
+//   return <h1>Hello, {props.name}</h1>;
+// }</pre>
+//       <p>Components can be composed together to create complex UIs. They can also maintain state, which allows them to keep track of changing data.</p>
+//       <h3>Next Steps</h3>
+//       <p>Once you're comfortable with the basics, you might want to explore:</p>
+//       <ul>
+//         <li>React Router for navigation</li>
+//         <li>State management with Redux or Context API</li>
+//         <li>Styling approaches in React</li>
+//         <li>Making API calls</li>
+//       </ul>
+//       <p>React has a vast ecosystem and active community, making it a great choice for modern web development.</p>
+//     `
+//   },
   {
     id: 1,
-    title: 'Getting Started with React',
-    date: 'July 15, 2023',
-    excerpt: 'Learn how to build your first React application from scratch.',
-    content: `
-      <p>React is a popular JavaScript library for building user interfaces, particularly single-page applications. It's used for handling the view layer in web and mobile apps.</p>
-      <h3>Setting Up Your Environment</h3>
-      <p>To get started with React, you'll need to have Node.js installed. Then, you can create a new React application using Create React App:</p>
-      <pre>npx create-react-app my-app</pre>
-      <p>Once the installation is complete, navigate to your project directory and start the development server:</p>
-      <pre>cd my-app</pre>
-      <pre>npm start</pre>
-      <h3>Understanding React Components</h3>
-      <p>React applications are built using components. A component is a self-contained module that renders some output. Components can be functional or class-based.</p>
-      <p>Here's a simple functional component:</p>
-      <pre>function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
-}</pre>
-      <p>Components can be composed together to create complex UIs. They can also maintain state, which allows them to keep track of changing data.</p>
-      <h3>Next Steps</h3>
-      <p>Once you're comfortable with the basics, you might want to explore:</p>
-      <ul>
-        <li>React Router for navigation</li>
-        <li>State management with Redux or Context API</li>
-        <li>Styling approaches in React</li>
-        <li>Making API calls</li>
-      </ul>
-      <p>React has a vast ecosystem and active community, making it a great choice for modern web development.</p>
-    `
-  },
-  {
-    id: 4,
     title: 'Probabilistic Counting with HyperLogLog: Under the Hood',
     date: 'May 1, 2025',
     excerpt: 'How do you count billions of users or pageviews without storing every single one? Meet HyperLogLog—a clever algorithm that trades exactness for extreme efficiency. Here\'s how it works, and why it\'s used by Redis, Google, and more.',

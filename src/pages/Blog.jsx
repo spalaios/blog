@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 // Mock blog data - in a real app this would come from an API or data source
 const blogPosts = [
+  // {
+  //   id: 1,
+  //   title: 'Getting Started with React',
+  //   date: 'July 15, 2023',
+  //   excerpt: 'Learn how to build your first React application from scratch, set up your development environment, and understand the core concepts of React.',
+  //   content: 'Full content would go here...'
+  // },
   {
     id: 1,
-    title: 'Getting Started with React',
-    date: 'July 15, 2023',
-    excerpt: 'Learn how to build your first React application from scratch, set up your development environment, and understand the core concepts of React.',
-    content: 'Full content would go here...'
-  },
-  {
-    id: 4,
     title: 'Understanding HyperLogLog',
     date: 'May 1, 2025',
     excerpt: 'How do you count billions of users or pageviews without storing every single one? Meet HyperLogLog—a clever algorithm that trades exactness for extreme efficiency. Here\'s how it works, and why it’s used by Redis, Google, and more..',
@@ -25,7 +25,7 @@ const Blog = () => {
       <div className="mono-blog-container">
         <div className="mono-blog-heading">
           <h1 className="mono-title">$ cat blog-posts.md</h1>
-          <p className="mono-description">A collection of thoughts, tutorials, and insights on web development.</p>
+          <p className="mono-description">A collection of my learnings</p>
         </div>
         
         {blogPosts.map(post => (
