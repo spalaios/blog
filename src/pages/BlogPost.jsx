@@ -37,7 +37,7 @@ const blogPosts = [
 //   },
   {
     id: 1,
-    title: 'Probabilistic Counting with HyperLogLog: Under the Hood',
+    title: 'Probabilistic Counting with HyperLogLog : Under the Hood - 1',
     date: 'May 1, 2025',
     excerpt: 'How do you count billions of users or pageviews without storing every single one? Meet HyperLogLog—a clever algorithm that trades exactness for extreme efficiency. Here\'s how it works, and why it\'s used by Redis, Google, and more.',
     content: `
