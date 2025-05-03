@@ -6,7 +6,7 @@
 export const formatJSON = (jsonString) => {
   // Replace the quotation marks around keys
   const formattedJSON = jsonString
-    .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, (match) => {
+  .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g, (match) => {
       // Identify the type of value
       let cls = 'number';
       if (/^"/.test(match)) {
