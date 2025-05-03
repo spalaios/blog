@@ -1,0 +1,14 @@
+{
+  "name": "Suraj Palai's Blog",
+  "short_name": "Suraj Palai",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#F5F5F5",
+  "background_color": "#F5F5F5",
+  "display": "standalone"
+} 
