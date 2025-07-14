@@ -18,7 +18,11 @@ const Home = () => {
           <h2 className="mono-section-title">Recent Posts</h2>
           <div className="mono-links-grid">
             <Link to="/blog/1" className="mono-link-item" aria-label="Read blog post: Understanding HyperLogLog" tabIndex="0">
-              <span className="mono-link-title">Probabilistic Counting with HyperLogLog: Under the Hood</span>
+              <span className="mono-link-title">Probabilistic Counting with HyperLogLog: Under the Hood - 1</span>
+              <span className="mono-link-arrow">→</span>
+            </Link>
+            <Link to="/blog/2" className="mono-link-item" aria-label="Read blog post: Understanding HyperLogLog" tabIndex="0">
+              <span className="mono-link-title">Probabilistic Counting with HyperLogLog: Under the Hood - 2</span>
               <span className="mono-link-arrow">→</span>
             </Link>
             <Link to="/blog" className="mono-link-item mono-view-all" aria-label="View all blog posts" tabIndex="0">

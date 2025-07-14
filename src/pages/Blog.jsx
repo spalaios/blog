@@ -16,6 +16,13 @@ const blogPosts = [
     date: 'May 1, 2025',
     excerpt: 'How do you count billions of users or pageviews without storing every single one? Meet HyperLogLog—a clever algorithm that trades exactness for extreme efficiency. Here\'s how it works, and why it’s used by Redis, Google, and more..',
     content: 'Full content would go here...'
+  },
+  {
+    id: 2,
+    title: 'Probabilistic Counting with HyperLogLog : Under the Hood - 2',
+    date: 'July 14, 2025',
+    excerpt: 'How do you count billions of users or pageviews without storing every single one? Meet HyperLogLog—a clever algorithm that trades exactness for extreme efficiency. Here\'s how it works, and why it’s used by Redis, Google, and more..',
+    content: 'Full content would go here...'
   }
 ];
 
