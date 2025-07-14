@@ -7,10 +7,9 @@ const Home = () => {
       <div className="mono-split-layout">
         <div className="mono-intro">
           <h1 className="mono-title">Hi, I'm Suraj.</h1>
-          <h2 className="mono-subtitle">Software engineer specializing in web development</h2>
+          {/* <h2 className="mono-subtitle">Software engineer specializing in web development</h2> */}
           <p className="mono-description">
-            I build modern web applications with a focus on clean code and user experience. 
-            Currently working on frontend projects and exploring new technologies.
+          Programmer, gamer, wanderer, reader. I've spent 8 years building backend applications, but I'm equally passionate about getting lost in a great book or exploring a new city. Currently working through my PS5 backlog while planning my next trip.
           </p>
         </div>
         
